@@ -15,7 +15,7 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
   };
@@ -23,15 +23,17 @@ export default function ContactPage() {
   return (
     <div className="bg-[var(--background)]">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-950 via-blue-900 to-slate-900 px-6 py-20 text-white">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">
+      <div className="relative overflow-hidden bg-[#06080f] px-6 py-20 text-white">
+        <div className="pointer-events-none absolute -top-20 right-1/3 h-[400px] w-[400px] rounded-full bg-blue-600/8 blur-[100px]" />
+        <div className="mx-auto max-w-7xl relative">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-400/70 mb-4">
             Contact Us
           </p>
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
             Get a Quote
           </h1>
-          <p className="mt-5 max-w-lg text-blue-100/80 leading-relaxed">
+          <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
+          <p className="mt-6 max-w-lg text-white/50 leading-relaxed">
             Tell us your press model and the part you need. We'll confirm
             availability and send you a quote within 24 hours.
           </p>

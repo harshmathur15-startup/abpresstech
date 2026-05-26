@@ -38,9 +38,10 @@ export default function QualityPage() {
   return (
     <div className="bg-[var(--background)]">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-950 via-blue-900 to-slate-900 px-6 py-20 text-white">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">
+      <div className="relative overflow-hidden bg-[#06080f] px-6 py-20 text-white">
+        <div className="pointer-events-none absolute -top-20 left-1/3 h-[400px] w-[400px] rounded-full bg-blue-600/8 blur-[100px]" />
+        <div className="mx-auto max-w-7xl relative">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-400/70 mb-4">
             Quality
           </p>
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -48,7 +49,8 @@ export default function QualityPage() {
             <br />
             from First Principle
           </h1>
-          <p className="mt-5 max-w-xl text-blue-100/80 leading-relaxed">
+          <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
+          <p className="mt-6 max-w-xl text-white/50 leading-relaxed">
             Our ISO 9001:2008 certification isn't a wall plaque — it's a
             manufacturing discipline applied at every step from raw material
             receipt to final dispatch.

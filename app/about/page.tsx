@@ -5,9 +5,10 @@ export default function AboutPage() {
   return (
     <div className="bg-[var(--background)]">
       {/* Header */}
-      <div className="bg-gradient-to-br from-blue-950 via-blue-900 to-slate-900 px-6 py-20 text-white">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">
+      <div className="relative overflow-hidden bg-[#06080f] px-6 py-20 text-white">
+        <div className="pointer-events-none absolute -top-20 right-1/4 h-[400px] w-[400px] rounded-full bg-blue-600/8 blur-[100px]" />
+        <div className="mx-auto max-w-7xl relative">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-400/70 mb-4">
             About Us
           </p>
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -15,7 +16,8 @@ export default function AboutPage() {
             <br />
             Engineering Excellence
           </h1>
-          <p className="mt-5 max-w-xl text-blue-100/80 leading-relaxed">
+          <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
+          <p className="mt-6 max-w-xl text-white/50 leading-relaxed">
             AB Presstech Machineries Private Limited has been the trusted
             partner for web offset press maintenance across India since the
             1990s — manufacturing spare parts that keep presses running.
@@ -28,10 +30,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl grid grid-cols-2 gap-6 sm:grid-cols-4">
           {stats.map(({ value, label }) => (
             <div key={label} className="text-center">
-              <p className="text-3xl font-extrabold text-[var(--primary)]">
+              <p className="text-3xl font-black tracking-tight text-[var(--foreground)]">
                 {value}
               </p>
-              <p className="mt-1 text-sm text-[var(--muted-foreground)]">
+              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-[var(--muted-foreground)]">
                 {label}
               </p>
             </div>
