@@ -32,15 +32,17 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
       {/* Page header */}
-      <div className="bg-[var(--card)] border-b border-[var(--border)] px-6 py-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--primary)] mb-2">
+      <div className="relative overflow-hidden bg-[#06080f] px-6 py-20 text-white">
+        <div className="pointer-events-none absolute -top-20 left-1/2 h-[400px] w-[400px] rounded-full bg-blue-600/8 blur-[100px]" />
+        <div className="mx-auto max-w-7xl relative">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-400/70 mb-4">
             Product Catalogue
           </p>
-          <h1 className="text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
             Spare Parts for Web Offset Presses
           </h1>
-          <p className="mt-3 text-[var(--muted-foreground)] max-w-xl">
+          <div className="mt-3 h-1 w-12 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
+          <p className="mt-6 max-w-xl text-white/50 leading-relaxed">
             Browse our full range of replacement parts compatible with Komori,
             Orient, Newsline, Goss, and Fast presses. Custom sizes available on
             request.
