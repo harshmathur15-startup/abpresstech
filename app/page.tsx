@@ -39,42 +39,76 @@ export default function HomePage() {
         <div className="pointer-events-none absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-sky-500/8 blur-[80px]" />
 
         <div className="mx-auto max-w-7xl relative">
-          <div className="max-w-2xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-500/25 bg-sky-500/8 px-3.5 py-1.5 text-xs font-medium text-sky-300">
-              <Award className="h-3.5 w-3.5" />
-              ISO 9001:2008 Certified Manufacturer
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+            {/* Left — headline + CTAs */}
+            <div className="flex-1">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-500/25 bg-sky-500/8 px-3.5 py-1.5 text-xs font-medium text-sky-300">
+                <Award className="h-3.5 w-3.5" />
+                ISO 9001:2008 Certified Manufacturer
+              </div>
+              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+                Precision Spare Parts
+                <br />
+                for Web Offset Presses
+              </h1>
+              <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
+              <p className="mt-6 text-base text-white/60 leading-relaxed max-w-lg">
+                Manufacturer and exporter of high-quality replacement components
+                for Komori, Orient, Newsline, Goss, and Fast printing presses.
+                Based in New Delhi — serving printers across India for 25+
+                years.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/products"
+                  className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-500 transition-colors"
+                >
+                  Browse Products
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10 transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  Get a Quote
+                </Link>
+              </div>
+              <p className="mt-5 text-xs text-white/30 tracking-wide">
+                No minimum order &nbsp;·&nbsp; Custom sizes available
+                &nbsp;·&nbsp; Pan-India delivery
+              </p>
             </div>
-            <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-              Precision Spare Parts
-              <br />
-              for Web Offset Presses
-            </h1>
-            <div className="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
-            <p className="mt-6 text-base text-white/60 leading-relaxed max-w-xl">
-              Manufacturer and exporter of high-quality replacement components
-              for Komori, Orient, Newsline, Goss, and Fast printing presses.
-              Based in New Delhi — serving printers across India for 25+ years.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/products"
-                className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-500 transition-colors"
-              >
-                Browse Products
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10 transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                Get a Quote
-              </Link>
+
+            {/* Right — stats card */}
+            <div className="mt-12 lg:mt-0 lg:w-80 shrink-0">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-400/60 mb-5">
+                  By the numbers
+                </p>
+                <div className="grid grid-cols-2 gap-px bg-white/8 rounded-xl overflow-hidden">
+                  {stats.map(({ value, label }) => (
+                    <div
+                      key={label}
+                      className="bg-white/4 px-5 py-5 hover:bg-white/8 transition-colors"
+                    >
+                      <p className="text-3xl font-black text-white tracking-tight">
+                        {value}
+                      </p>
+                      <p className="mt-1 text-[11px] text-white/45 leading-snug">
+                        {label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 border-t border-white/8 pt-4 flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <p className="text-xs text-white/40">
+                    Trusted by printers across India & South Asia
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="mt-5 text-xs text-white/30 tracking-wide">
-              No minimum order &nbsp;·&nbsp; Custom sizes available
-              &nbsp;·&nbsp; Pan-India delivery
-            </p>
           </div>
         </div>
 
@@ -93,22 +127,6 @@ export default function HomePage() {
               </span>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-[var(--border)] bg-[var(--card)] px-6 py-10">
-        <div className="mx-auto max-w-7xl grid gap-6 grid-cols-2 sm:grid-cols-4">
-          {stats.map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <p className="text-3xl font-black text-[var(--foreground)] tracking-tight">
-                {value}
-              </p>
-              <p className="mt-1 text-xs font-medium text-[var(--muted-foreground)] uppercase tracking-wider">
-                {label}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
 
