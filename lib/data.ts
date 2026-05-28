@@ -210,6 +210,157 @@ export const stats = [
 
 export const brands = ["Komori", "Orient", "Newsline", "Fast", "Goss"];
 
+export interface MachinePlatform {
+  brand: string;
+  origin: string;
+  models: string[];
+  description: string;
+  partsSupplied: string[];
+}
+
+export interface RefurbishedMachine {
+  id: string;
+  name: string;
+  brand: string;
+  year: string;
+  condition: "Good" | "Very Good" | "Excellent";
+  cutoff: string;
+  speed: string;
+  description: string;
+  specs: string[];
+}
+
+export const machinePlatforms: MachinePlatform[] = [
+  {
+    brand: "Komori",
+    origin: "Japan",
+    models: ["System 25", "System 40", "Lithrone 26", "Lithrone 40"],
+    description:
+      "One of the most widely used Japanese web offset presses in Indian newspaper printing. AB Presstech supplies a comprehensive range of rollers, gears, gaskets, and rubber products for all Komori web models.",
+    partsSupplied: [
+      "Nipping Rollers",
+      "Spur Gears & Pinions",
+      "Gasket Sets",
+      "Worm Wheels",
+      "Industrial Sockets",
+    ],
+  },
+  {
+    brand: "Orient",
+    origin: "India",
+    models: ["Orient 430", "Orient 508", "Orient 630", "Orient 720"],
+    description:
+      "A dominant Indian-made web offset press widely used across regional newspaper publishers. AB Presstech has deep expertise in Orient press parts, with many components available from stock.",
+    partsSupplied: [
+      "Nipping Rollers",
+      "Spur Gears",
+      "Gasket Kits",
+      "Extruded Rubber Profiles",
+      "Form Roller Covers",
+    ],
+  },
+  {
+    brand: "Newsline",
+    origin: "India",
+    models: ["Newsline 430", "Newsline 508", "Newsline Compact"],
+    description:
+      "Popular among mid-sized Indian newspaper printers, Newsline presses share many compatible components with Orient. AB Presstech supplies matched spare parts across the full Newsline range.",
+    partsSupplied: [
+      "Nipping Rollers",
+      "Spur Gears",
+      "Rubber Profiles",
+      "Gasket Sets",
+    ],
+  },
+  {
+    brand: "Goss",
+    origin: "USA",
+    models: ["Goss Community", "Goss Urbanite", "Goss SSC", "Goss Colorliner"],
+    description:
+      "American-made Goss presses are found in many large commercial and newspaper printing facilities across India. AB Presstech manufactures precision replacement parts to OEM Goss tolerances.",
+    partsSupplied: [
+      "Heavy Duty Nipping Rollers",
+      "Pinion Gears",
+      "Worm Wheels",
+      "Industrial Sockets",
+    ],
+  },
+  {
+    brand: "Fast",
+    origin: "India",
+    models: ["Fast 430", "Fast 508", "Fast Maxline"],
+    description:
+      "Fast presses are a cost-effective choice for Indian regional publishers. AB Presstech supplies a full range of wear parts and rubber components to keep Fast presses running at peak performance.",
+    partsSupplied: [
+      "Nipping Rollers",
+      "Pinion Gears",
+      "Form Roller Covers",
+      "Gaskets",
+      "Extruded Profiles",
+    ],
+  },
+];
+
+export const refurbishedMachines: RefurbishedMachine[] = [
+  {
+    id: "orient-508-2018",
+    name: "Orient 508 Web Offset Press",
+    brand: "Orient",
+    year: "2018",
+    condition: "Very Good",
+    cutoff: "508 mm",
+    speed: "40,000 CPH",
+    description:
+      "Fully reconditioned 4-unit Orient 508 press. All rollers, blankets, and gears replaced. Electrical systems upgraded. Trial run completed — ready for immediate dispatch.",
+    specs: [
+      "4 printing units",
+      "508 mm cutoff",
+      "40,000 CPH max speed",
+      "Auto plate loading",
+      "All wear parts replaced",
+      "12-month post-installation support",
+    ],
+  },
+  {
+    id: "newsline-430-2019",
+    name: "Newsline 430 Compact Press",
+    brand: "Newsline",
+    year: "2019",
+    condition: "Excellent",
+    cutoff: "430 mm",
+    speed: "35,000 CPH",
+    description:
+      "2-unit Newsline 430 in excellent working condition. Ideal for small to mid-sized regional newspaper publishers. Complete with folder and delivery unit. Overhauled in our facility.",
+    specs: [
+      "2 printing units",
+      "430 mm cutoff",
+      "35,000 CPH max speed",
+      "Folder included",
+      "New rubber rollers fitted",
+      "3-month on-site warranty",
+    ],
+  },
+  {
+    id: "fast-508-2017",
+    name: "Fast 508 Web Offset Press",
+    brand: "Fast",
+    year: "2017",
+    condition: "Good",
+    cutoff: "508 mm",
+    speed: "38,000 CPH",
+    description:
+      "4-unit Fast 508 press, reconditioned and tested. Key mechanical components replaced. Suitable for buyers looking for an affordable entry into high-volume newspaper printing.",
+    specs: [
+      "4 printing units",
+      "508 mm cutoff",
+      "38,000 CPH max speed",
+      "Gears and pinions replaced",
+      "New blankets fitted",
+      "Available for inspection at our facility",
+    ],
+  },
+];
+
 export const certifications = [
   {
     title: "ISO 9001:2008 Certified",
